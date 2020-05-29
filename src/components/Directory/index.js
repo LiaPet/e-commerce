@@ -1,5 +1,7 @@
 import React from 'react';
+// @ts-ignore
 import ShopMen from './../../assets/shopMens.jpg';
+// @ts-ignore
 import ShopWomen from './../../assets/shopWomens.jpg';
 import './styles.scss';
 
@@ -13,7 +15,7 @@ const Directory = props => {
                         backgroundImage: `url(${ShopWomen})`
                     }}
                 >
-                    <a>
+                    <a href='https://www.google.com/'>
                         Shop Womens
                     </a>
                 </div>
@@ -23,7 +25,7 @@ const Directory = props => {
                         backgroundImage: `url(${ShopMen})`
                     }}
                 >
-                    <a>
+                    <a href='https://www.google.com/'>
                         Shop Mens
                     </a>
                 </div>
