@@ -37,7 +37,13 @@
         }
 
         li {
+            display: inline-block;
             list-style-type: none;
+            cursor: pointer;
+            
+            &:first-child{
+                margin-right: 1.5rem;
+            }
 
             a {
                 font-size: 1.8rem;
