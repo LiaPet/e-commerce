@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
+
 import "./styles.scss";
-import Buttons from "./../../components/Forms/Button";
 import { signInWithGoogle, auth } from "./../../firebase/utils";
 
 import AuthWrapper from './../AuthWrapper'
@@ -37,7 +38,7 @@ class Signin extends Component {
 			await auth.signInWithEmailAndPassword(email, password);
 			this.setState({
 				...initialState
-			})
+			});
 
 		} catch (err) {
 			// console.log(err);
@@ -74,16 +75,22 @@ class Signin extends Component {
 								handleChange={this.handleChange}
 							/>
 
-							<Buttons type="submit">
+							<Button type="submit">
 								LogIn
-							</Buttons>
+							</Button>
 
 							<div className="socialSignin">
 								<div className="row">
-								    <Buttons onClick={signInWithGoogle}>
+								    <Button onClick={signInWithGoogle}>
 										Sign in with Google
-									</Buttons>
+									</Button>
 								</div>
+							</div>
+
+							<div className="links">
+								<Link to="/recovery">
+									Reset Password
+								</Link>
 							</div>
 						</form>
 					</div>
