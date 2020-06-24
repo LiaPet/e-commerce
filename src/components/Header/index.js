@@ -22,7 +22,12 @@ const Header = props => {
                     {currentUser && (
                         <ul>
                             <li>
-                                <span onClick={ () => auth.signOut()}>
+                                <Link to="/dashboard">
+                                    My Account
+                                </Link>
+                            </li>
+                            <li>
+                                <span onClick={() => auth.signOut()}>
                                     LOGOUT
                                 </span>
                             </li>
@@ -34,12 +39,12 @@ const Header = props => {
                             <li>
                                 <Link to="/registration">
                                     Register
-                            </Link>
+                                </Link>
                             </li>
                             <li>
                                 <Link to="/login">
                                     Login
-                            </Link>
+                                </Link>
                             </li>
                         </ul>
                     )}
@@ -51,10 +56,10 @@ const Header = props => {
 
 Header.defaultProps = {
     currentUser: null
-  };
-  
+};
+
 const mapStateToProps = ({ user }) => ({
     currentUser: user.currentUser
 });
-  
+
 export default connect(mapStateToProps, null)(Header);
