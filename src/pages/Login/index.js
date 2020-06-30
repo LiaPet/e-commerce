@@ -1,9 +1,9 @@
 import React from 'react';
 import './styles.scss';
-import Signin from './../../components/Signin';
+import SignIn from './../../components/Signin';
 
-const Login = propos => {
-    return <Signin />
+const Login = props => {
+  return <SignIn />
 }
 
 export default Login;
