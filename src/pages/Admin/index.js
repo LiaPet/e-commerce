@@ -162,7 +162,7 @@ const Admin = props => {
                             </Button>
                           </td>
                         </tr>
-                      )
+                      );
                     })}
                   </tbody>
                 </table>
@@ -175,6 +175,6 @@ const Admin = props => {
 
     </div>
   );
-}
+};
 
 export default Admin;

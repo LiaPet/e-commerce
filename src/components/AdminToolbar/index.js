@@ -6,7 +6,7 @@ import './styles.scss';
 
 const mapState = ({ user }) => ({
   currentUser: user.currentUser
-})
+});
 
 const AdminToolbar = props => {
   const { currentUser } = useSelector(mapState);
@@ -25,6 +25,6 @@ const AdminToolbar = props => {
       </ul>
     </div>
   );
-}
+};
 
 export default AdminToolbar;
