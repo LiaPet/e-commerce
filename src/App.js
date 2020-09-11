@@ -23,7 +23,11 @@ import Login from './pages/Login';
 import Recovery from './pages/Recovery';
 import Dashboard from './pages/Dashboard';
 import Admin from './pages/Admin';
+import Mens from './pages/Mens';
+import Womens from './pages/Womens';
+import Search from './pages/Search';
 import './default.scss';
+
 
 const App = props => {
   const dispatch = useDispatch();
@@ -43,6 +47,12 @@ const App = props => {
           </HomepageLayout>
         )}
         />
+        <Route path="/search" render={() => (
+          <MainLayout>
+            <Search />
+          </MainLayout>
+        )} />
+
         <Route path="/registration" render={() => (
           <MainLayout>
             <Registration />
@@ -65,6 +75,16 @@ const App = props => {
               <Dashboard />
             </DashboardLayout>
           </WithAuth>
+        )} />
+        <Route path="/mens" render={() => (
+          <MainLayout>
+            <Mens />
+          </MainLayout>
+        )} />
+        <Route path="/womens" render={() => (
+          <MainLayout>
+            <Womens />
+          </MainLayout>
         )} />
         <Route path="/admin" render={() => (
           <WithAdminAuth>
