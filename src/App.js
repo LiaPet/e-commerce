@@ -47,7 +47,14 @@ const App = props => {
           </HomepageLayout>
         )}
         />
-        <Route path="/search" render={() => (
+
+        <Route exact path="/search" render={() => (
+          <MainLayout>
+            <Search />
+          </MainLayout>
+        )} />
+
+        <Route path="/search/:filterType" render={() => (
           <MainLayout>
             <Search />
           </MainLayout>
@@ -58,17 +65,20 @@ const App = props => {
             <Registration />
           </MainLayout>
         )} />
+
         <Route path="/login"
           render={() => (
             <MainLayout>
               <Login />
             </MainLayout>
           )} />
+
         <Route path="/recovery" render={() => (
           <MainLayout>
             <Recovery />
           </MainLayout>
         )} />
+
         <Route path="/dashboard" render={() => (
           <WithAuth>
             <DashboardLayout>
@@ -76,16 +86,7 @@ const App = props => {
             </DashboardLayout>
           </WithAuth>
         )} />
-        <Route path="/mens" render={() => (
-          <MainLayout>
-            <Mens />
-          </MainLayout>
-        )} />
-        <Route path="/womens" render={() => (
-          <MainLayout>
-            <Womens />
-          </MainLayout>
-        )} />
+
         <Route path="/admin" render={() => (
           <WithAdminAuth>
             <AdminLayout>

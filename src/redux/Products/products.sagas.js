@@ -9,7 +9,7 @@ export function* addProduct({ payload: {
   productName,
   productThumbnail,
   productPrice
-}}) {
+} }) {
 
   try {
     const timestamp = new Date();
@@ -36,9 +36,11 @@ export function* onAddProductStart() {
   yield takeLatest(productsTypes.ADD_NEW_PRODUCT_START, addProduct);
 }
 
-export function* fetchProducts() {
+export function* fetchProducts({ payload: {
+  filterType
+} }) {
   try {
-    const products = yield handleFetchProducts();
+    const products = yield handleFetchProducts({ filterType });
     yield put(
       setProducts(products)
     );
@@ -55,7 +57,7 @@ export function* onFetchProductsStart() {
 export function* deleteProduct({ payload }) {
   try {
     yield handleDeleteProduct(payload);
-    yield put (
+    yield put(
       fetchProductsStart()
     );
 
@@ -73,5 +75,5 @@ export default function* productsSagas() {
     call(onAddProductStart),
     call(onFetchProductsStart),
     call(onDeleteProductStart),
-  ])
+  ]);
 }
